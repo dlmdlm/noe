@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+非空验证：<input type="text" id="u_name">
+                 <input type="button" onclick="validate_isNull()" value="提交"><br/>
+
+验证长度：<input type="password" id="user_pwd">
+                 <input type="button" onclick="validate_length()" value="提交"><br/>
+
+内容验证：<input type="text" id="u_mail">
+                    <input type="button" onclick="validate_type()" value="提交"><br/>
+
+                    <script>
+                     function validate_isNull(){
+                        var name=document.getElementById("u_name");
+                        if (name.value=="") {
+                        alert("次输入框不能为空；");
+                        }
+                    }
+
+                    function validate_length(){
+                        var pwd=document.getElementById("user_pwd")
+                        if (pwd.value.length<=6||pwd.value.length>10) {
+                            alert("次输入框内容长度在6-18之间；")
+                        }
+                    };
+
+
+                    function validate_type(){
+                        var email=document.getElementById("u_mail");
+                     /*   var at_location=email.value.indexOf("@");  */
+                     var at_location=email.value.indexOf("@");
+                     var dot_lalocat=email.value.lastIndexOf(".");
+                        if (at_location<3||email.value.length-dot_lolocat<3||dot_lalocat-atlocation<2){
+                            alert("邮箱格式不对；");
+                        }
+
+                    }
+                  
+
+
+                    </script>
+    
+</body>
+</html>
